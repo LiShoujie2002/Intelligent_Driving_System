@@ -1,0 +1,196 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Detailed RTL Component Info :
+-----Module Name :
+                    hdmi_loop
+
+-----ROMs :
+            1K Bit    (64 x 20 bit)          ROMs := 1
+            10K Bit    (512 x 20 bit)          ROMs := 1
+
+-----RAMs :
+            1K Bit    (32 x 32 bit)          RAMs := 2
+            48K Bit    (2048 x 24 bit)          RAMs := 4
+            64K Bit    (8192 x 8 bit)          RAMs := 4
+            2048K Bit    (262144 x 8 bit)          RAMs := 2
+
+Distributed RAM and Block RAM: Final Mapping Report
+|---------------------------------------------|------------------------|-------------------|---------|
+| DPRAM Inst Name                             | Size (Depth x Width)   | Primitives        | Count   |
+|---------------------------------------------|------------------------|-------------------|---------|
+| u_soc/cpu/cpuregs/regs_1                    | 32 x 32                |                   |         |
+|                                             | 32 x 2                 | GTP_RAM32X2DP     | 16      |
+|---------------------------------------------|------------------------|-------------------|---------|
+
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| Inst Name                                   | Size (Depth x Width)   | Write_Mode_A      | Write_Mode_B      | Ram_Mode          | Primitives        |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| ms72xx_ctl/U1_ms7200_ctl/N1219_3_concat_3   | 512 x 20               |                   |                   |                   |                   |
+|                          N1219_3_concat_3   | 512 x 20               | NORMAL_WRITE      | /                 | SINGLE_PORT       | GTP_DRM18K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| ms72xx_ctl/U2_ms7210_ctl/N325_2_concat_2    | 64 x 20                |                   |                   |                   |                   |
+|                          N325_2_concat_2    | 64 x 20                | NORMAL_WRITE      | /                 | SINGLE_PORT       | GTP_DRM18K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_soc/cpu/cpuregs/regs                      | 32 x 32                |                   |                   |                   |                   |
+|                   regs                      | 32 x 32                | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM18K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_soc/memory                                | 8 K x 8                |                   |                   |                   |                   |
+|       memory_0                              | 8 K x 4                | READ_BEFORE_WRITE | /                 | SINGLE_PORT       | GTP_DRM36K_E1     |
+|       memory_4                              | 8 K x 4                | READ_BEFORE_WRITE | /                 | SINGLE_PORT       | GTP_DRM36K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_soc/memory_1                              | 8 K x 8                |                   |                   |                   |                   |
+|       memory_1_0                            | 8 K x 4                | READ_BEFORE_WRITE | /                 | SINGLE_PORT       | GTP_DRM36K_E1     |
+|       memory_1_1                            | 8 K x 4                | READ_BEFORE_WRITE | /                 | SINGLE_PORT       | GTP_DRM36K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_soc/memory_2                              | 8 K x 8                |                   |                   |                   |                   |
+|       memory_2_0                            | 8 K x 4                | READ_BEFORE_WRITE | /                 | SINGLE_PORT       | GTP_DRM36K_E1     |
+|       memory_2_1                            | 8 K x 4                | READ_BEFORE_WRITE | /                 | SINGLE_PORT       | GTP_DRM36K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_soc/memory_3                              | 8 K x 8                |                   |                   |                   |                   |
+|       memory_3_0                            | 8 K x 4                | READ_BEFORE_WRITE | /                 | SINGLE_PORT       | GTP_DRM36K_E1     |
+|       memory_3_1                            | 8 K x 4                | READ_BEFORE_WRITE | /                 | SINGLE_PORT       | GTP_DRM36K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_uplink/fb_hi                              | 256 K x 8              |                   |                   |                   |                   |
+|          fb_hi_0_6_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_1_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_2_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_3_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_4_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_5_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_7_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_0_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_1_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_2_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_3_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_4_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_5_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_6_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_7_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_0_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_1_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_2_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_3_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_4_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_5_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_6_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_7_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_0_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_1_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_2_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_3_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_4_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_5_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_6_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_7_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_0_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_0_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_1_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_2_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_3_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_4_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_5_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_6_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_0_7_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_0_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_1_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_2_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_3_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_4_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_5_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_6_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_1_7_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_0_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_1_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_2_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_3_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_4_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_5_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_6_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_2_7_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_0_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_1_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_2_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_3_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_4_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_5_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_6_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_hi_3_7_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_uplink/fb_lo                              | 256 K x 8              |                   |                   |                   |                   |
+|          fb_lo_3_6_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_5_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_6_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_0_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_1_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_2_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_3_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_4_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_5_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_6_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_7_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_0_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_1_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_2_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_3_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_5_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_7_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_0_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_1_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_2_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_4_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_3_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_4_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_5_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_6_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_7_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_0_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_6_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_7_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_7_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_1_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_2_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_3_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_4_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_5_upper                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_0_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_1_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_2_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_3_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_4_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_5_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_6_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_0_7_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_0_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_1_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_2_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_3_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_4_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_5_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_6_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_1_7_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_0_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_1_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_2_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_3_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_4_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_5_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_6_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_2_7_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_0_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_1_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_2_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_3_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|          fb_lo_3_4_lower                    | 32 K x 1               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_uplink/u_ds/lbuf0                         | 2 K x 24               |                   |                   |                   |                   |
+|               lbuf0_0                       | 2 K x 16               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_uplink/u_ds/lbuf0                         | 2 K x 24               |                   |                   |                   |                   |
+| u_uplink/u_ds/lbuf1                         | 2 K x 24               |                   |                   |                   |                   |
+|               lbuf0_1_bwe_2                 | 2 K x 48               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+| u_uplink/u_ds/lbuf1                         | 2 K x 24               |                   |                   |                   |                   |
+|               lbuf1_0                       | 2 K x 16               | NORMAL_WRITE      | NORMAL_WRITE      | SIMPLE_DUAL_PORT  | GTP_DRM36K_E1     |
+|---------------------------------------------|------------------------|-------------------|-------------------|-------------------|-------------------|
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
