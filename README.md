@@ -1,2 +1,4 @@
 # Intelligent_Driving_System
 Hardware-software co-design
+YOLOP_v5_GitHub是智驾系统项目的算法工程
+2_10_hdmi_loop是智驾系统项目的硬件工程
